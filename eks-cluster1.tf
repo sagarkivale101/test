@@ -19,6 +19,13 @@ additional_userdata           = "echo foo bar"
 additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id] 
 asg_desired_1          = 1 
 },
+{
+name                          = "workerGrp-name" 
+instance_type                 = "t2.small"
+additional_userdata           = "echo foo bar"
+additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id] 
+asg_desired_1          = 1 
+},
     {
       name                          = "wokergrp1"
       instance_type                 = "t2.small"
