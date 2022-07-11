@@ -12,12 +12,19 @@ module "eks" {
   }
 
   worker_groups = [
+{
+name                          = "workerGrp-name" 
+instance_type                 = "t2.small"
+additional_userdata           = "echo foo bar"
+additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id] 
+asg_desired_1          = 1 
+},
     {
       name                          = "workergrp1"
       instance_type                 = "t2.small"
       additional_userdata           = "echo foo bar"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-      asg_desired_capacity          = 1
+      asg_desired_1          = 1
     },
   ]
 }
